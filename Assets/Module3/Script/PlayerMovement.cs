@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEditor.Tilemaps;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -20,6 +21,8 @@ namespace Platformer
 
         private Rigidbody2D rb;
         private Animator animator;
+        [SerializeField] private AudioSource jumpSoundEffect;
+
 
         // Start is called before the first frame update 
         void Start()
@@ -40,8 +43,7 @@ namespace Platformer
             {
                 moveInput = Input.GetAxis("Horizontal");
                 Vector3 direction = transform.right * moveInput;
-                transform.position = Vector3.MoveTowards(transform.position, transform.position +
-direction, movingSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, movingSpeed * Time.deltaTime);
                 animator.SetInteger("playerState", 1); // Turn on run animation 
             }
             else
@@ -50,6 +52,7 @@ direction, movingSpeed * Time.deltaTime);
             }
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
+                jumpSoundEffect.Play();
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
             if (!isGrounded) animator.SetInteger("playerState", 2); //Turn on jump animation 

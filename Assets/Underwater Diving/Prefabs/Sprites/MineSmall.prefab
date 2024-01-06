@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4903030220104806}
   - component: {fileID: 212621444210347810}
   - component: {fileID: 58969968083721112}
-  - component: {fileID: 114690665796368102}
   - component: {fileID: 114582278952373470}
   m_Layer: 0
   m_Name: MineSmall
@@ -122,18 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114690665796368102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304344704602514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 609dc6b73a5ce4b1bb5bf085838b2318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114582278952373470
 MonoBehaviour:
   m_ObjectHideFlags: 0

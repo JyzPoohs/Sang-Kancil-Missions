@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Background
   - Ground
+  - Enemy
+  - Cherry
+  - Pear
+  - Life
+  - Pause
+  - Danger
+  - Underwater
   layers:
   - Default
   - TransparentFX
@@ -40,14 +47,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 62137035
     locked: 0
   - name: Ground
     uniqueID: 1752641169
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 3621470299

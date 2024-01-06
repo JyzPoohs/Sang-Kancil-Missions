@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Module3/SampleScene.unity
+    path: Assets/Scenes/Sunny.unity
+    guid: bf20eac5d24ff684787603cf159f377f
+  - enabled: 1
+    path: Assets/Scenes/MeetEagle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/JungleCanopy.unity
+    guid: 21eccfc07eb940e4ea4b4870a92a37bd
   m_configObjects: {}

@@ -8,21 +8,23 @@ namespace Platformer
     {
         public Transform target;
         public Transform farBackground, middleBackground;
-        private float lastXPos;
+        private Vector2 lastPosition;
 
         void Start()
         {
-            lastXPos = transform.position.x;
+            lastPosition = target.position;
         }
 
-        // Update is called once per frame
         void Update()
         {
-            transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
-            float amountToMoveX = transform.position.x - lastXPos;
-            farBackground.position = farBackground.position + new Vector3(amountToMoveX, 0f, 0f);
-            middleBackground.position += new Vector3(amountToMoveX * .5f, 0f, 0f);
-            lastXPos = transform.position.x;
+            Vector2 currentPosition = target.position;
+            Vector2 newPosition = currentPosition - lastPosition;
+
+            transform.position = new Vector3(transform.position.x + newPosition.x, transform.position.y + newPosition.y, transform.position.z);
+            farBackground.position += new Vector3(newPosition.x, newPosition.y, 0f);
+            middleBackground.position += new Vector3(newPosition.x * 0.5f, newPosition.y * 0.5f, 0f);
+
+            lastPosition = currentPosition;
         }
     }
 }
