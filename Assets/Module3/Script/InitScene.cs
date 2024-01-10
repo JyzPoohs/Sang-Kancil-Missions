@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InitScene : MonoBehaviour
 {
+    public string sceneName; // The name of the scene to load
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,6 @@ public class InitScene : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("MeetEagle"); // Load the scene named "Scene2"
+        SceneManager.LoadScene(sceneName); // Load the scene named "Scene2"
     }
 }

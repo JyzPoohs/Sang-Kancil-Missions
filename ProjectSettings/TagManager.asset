@@ -13,6 +13,13 @@ TagManager:
   - Pause
   - Danger
   - Underwater
+  - MagicLeaf
+  - Cage
+  - Friend
+  - Bubble
+  - Key1
+  - Key2
+  - Key3
   layers:
   - Default
   - TransparentFX

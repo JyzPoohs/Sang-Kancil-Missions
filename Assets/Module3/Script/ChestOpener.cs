@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ChestOpener : MonoBehaviour
 {
-    public GameObject ChestClose, ChestOpen;
+    public GameObject ChestClose, ChestOpen, item;
     bool isOpen = false;
+    [SerializeField] private AudioSource chestOpenSoundEffect;
 
     void Start()
     {
         // Make sure the chest starts closed
         ChestClose.SetActive(true);
         ChestOpen.SetActive(false);
+        item.SetActive(false);
     }
 
     void Update()
@@ -20,8 +22,10 @@ public class ChestOpener : MonoBehaviour
         {
             // Toggle the chest state (open/close) when E is pressed
             isOpen = !isOpen;
+            chestOpenSoundEffect.Play();
             ChestClose.SetActive(isOpen);
             ChestOpen.SetActive(!isOpen);
+            item.SetActive(!isOpen);
         }
     }
 
@@ -34,12 +38,12 @@ public class ChestOpener : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // Reset isOpen to false when the player exits the trigger area
-            isOpen = false;
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Player"))
+    //     {
+    //         // Reset isOpen to false when the player exits the trigger area
+    //         isOpen = false;
+    //     }
+    // }
 }

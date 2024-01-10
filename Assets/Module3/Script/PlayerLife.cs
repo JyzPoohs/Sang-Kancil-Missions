@@ -11,6 +11,8 @@ public class PlayerLife : MonoBehaviour
     public Image[] hearts; // Array of heart images representing the player's life
     public Sprite fullHeartSprite; // Sprite for a full heart
     private Bubble bubble; // Reference to the Bubble script
+    public GameObject player; // Reference to the player game object
+    [SerializeField] private AudioSource extraLifeSoundEffect;
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class PlayerLife : MonoBehaviour
         if (currentLife <= 0)
         {
             Debug.Log("Game Over!"); // Debug message to check if the game over condition is met
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the scene if the player has no lives left
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the scene if the player has no lives left
         }
     }
 
@@ -42,6 +44,7 @@ public class PlayerLife : MonoBehaviour
 
         if (other.gameObject.CompareTag("Life"))
         {
+            extraLifeSoundEffect.Play();
             if (currentLife < maxLife)
             {
                 currentLife++; // Increase the life count

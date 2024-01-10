@@ -10,8 +10,37 @@ public class FruitsCollection : MonoBehaviour
     public int cherryNeeds = 15;
     public int pearNeeds = 12;
 
+    private int rescuedFriends = 0;
+
     [SerializeField] private TextMeshProUGUI cherryText;
     [SerializeField] private TextMeshProUGUI pearText;
+    [SerializeField] private TextMeshProUGUI rescueFriendsText;
+
+    private void Update()
+    {
+        if (rescueFriendsText != null)
+        {
+            string text = rescueFriendsText.text;
+
+            if (!string.IsNullOrEmpty(text) && text.Length > 0)
+            {
+                // Get the first character from the text
+                char firstChar = text[0];
+
+                // Convert the first character to an integer
+                if (int.TryParse(firstChar.ToString(), out int firstDigit))
+                {
+                    rescuedFriends = firstDigit;
+                }
+            }
+        }
+
+        if (cherryPoints >= cherryNeeds && pearPoints >= pearNeeds && rescuedFriends >= 3)
+        {
+            Debug.Log("You win!");
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +56,12 @@ public class FruitsCollection : MonoBehaviour
             pearPoints++;
             pearText.text = pearPoints + "/" + pearNeeds;
         }
+
+    }
+
+    public void SetRescuedFriends(int friends)
+    {
+        rescuedFriends = friends;
     }
 
     public int GetTotalCollectedFruits()
@@ -47,13 +82,14 @@ public class FruitsCollection : MonoBehaviour
             cherryPoints -= decrement;
             pearPoints -= decrement;
         }
-        else {
-            if(cherryPoints >= amount)
+        else
+        {
+            if (cherryPoints >= amount)
             {
                 Debug.Log("cherry points decrement");
                 cherryPoints -= amount;
             }
-            else if(pearPoints >= amount)
+            else if (pearPoints >= amount)
             {
                 pearPoints -= amount;
             }

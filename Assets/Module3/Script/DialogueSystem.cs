@@ -31,10 +31,6 @@ public class Sign : MonoBehaviour
         {
             infoText.text = information; // Display information when showing the dialogue box
         }
-        else
-        {
-            infoText.text = ""; // Clear the text when hiding the dialogue box
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +47,6 @@ public class Sign : MonoBehaviour
         {
             isPlayerInRange = false;
             dialogueBox.SetActive(false); // Hide the dialogue box when player exits range
-            infoText.text = ""; // Clear the text when player exits range
             isDialogueBoxActive = false; // Reset the dialogue box state
         }
     }

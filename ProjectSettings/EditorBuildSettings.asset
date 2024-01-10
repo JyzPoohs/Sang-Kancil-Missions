@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JungleCanopy.unity
     guid: 21eccfc07eb940e4ea4b4870a92a37bd
+  - enabled: 1
+    path: Assets/Scenes/Underwater.unity
+    guid: 28373b71fe66eb549b1c3e61947179cb
   m_configObjects: {}
