@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollowPlayer : MonoBehaviour
+public class EnemyFollowPlayer3 : MonoBehaviour
 {
     public float speed;
     public float lineOfSite;

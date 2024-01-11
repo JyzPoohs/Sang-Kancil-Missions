@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Platformer
 {
-    public class CameraController : MonoBehaviour
+    public class CameraController3 : MonoBehaviour
     {
         public Transform target;
         public Transform farBackground, middleBackground;
