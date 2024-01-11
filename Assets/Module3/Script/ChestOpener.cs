@@ -38,12 +38,12 @@ public class ChestOpener : MonoBehaviour
         }
     }
 
-    // private void OnTriggerExit2D(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("Player"))
-    //     {
-    //         // Reset isOpen to false when the player exits the trigger area
-    //         isOpen = false;
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            // Reset isOpen to false when the player exits the trigger area
+            isOpen = false;
+        }
+    }
 }
